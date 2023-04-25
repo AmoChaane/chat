@@ -23,26 +23,27 @@ export default function Header(props) {
             <Navbar fixed="top" expand="lg" className="navbar pt-0" style={props.state.scroll ? afterScroll : initialStyle}>
                 <Container>
                     <Navbar.Brand href="#home" className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Navbar.Brand>
-                    <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
+                    <span className='' style={{display: "flex", flexDirection: "column", rowGap: "7px"}}>
+                        <Navbar.Toggle className="d-lg-none d-block'" bsPrefix="collaps" aria-controls={`offcanvasNavbar-expand-lg`} />
+                        <span className="line d-lg-none d-block"></span>
+                        <span className="line d-lg-none d-block"></span>
+                    </span>
                     <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-lg`}
                     aria-labelledby={`offcanvasNavbarLabel-expand-lg`}
                     placement="end"
                     // style={{backgroundColor: "transparent"}}
                     >
-                    <Offcanvas.Header closeButton className='sidebar'>
-                        {/* <Offcanvas.Title id={`offcanvasNavbarLabel-expand-lg`}>
-                        Offcanvas
-                        </Offcanvas.Title> */}
+                    <Offcanvas.Header closeButton closeVariant='white' className='sidebar'>
                     </Offcanvas.Header>
                     <Offcanvas.Body className="sidebar">
                         <Nav className="justify-content-center flex-grow-1 pe-3">
-                            <Nav.Link href="#action1" className='fs-5 link me-4' style={{color: props.state.color}}>Playground</Nav.Link>
-                            <Nav.Link href="#action2" className='fs-5 link me-4' style={{color: props.state.color}}>Github</Nav.Link>
-                            <Nav.Link href="#action2" className='fs-5 link' style={{color: props.state.color}}>Suggestion</Nav.Link>
-                            {!props.state.large && <Nav.Link href="#signin" className="fs-5 link" style={{color: props.state.color}}>Sign In</Nav.Link>}
+                            <Nav.Link href="#action1" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link me-4 text-white'>Playground</Nav.Link>
+                            <Nav.Link href="#action2" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link me-4 text-white'>Github</Nav.Link>
+                            <Nav.Link href="#action2" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link text-white'>Suggestion</Nav.Link>
+                            {!props.state.large && <Nav.Link href="#signin" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className="fs-5 link text-white">Sign In</Nav.Link>}
                         </Nav>
-                        {props.state.large && <Nav.Link href="#signin" id="signin" className="fs-4" style={{color: props.state.color}}>Sign In</Nav.Link>}
+                        {props.state.large && <Nav.Link href="#signin" id="signin" className="fs-4 text-white">Sign In</Nav.Link>}
                     </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>

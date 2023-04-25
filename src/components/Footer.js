@@ -22,11 +22,11 @@ export default function Footer(props) {
                     <Nav.Link href="#action2" className='fs-5 text-white'>Suggestion</Nav.Link>
                 </Stack>
                 <div className="mt-5 mb-3" style={{height: "2px", background: "white"}}></div>
-                <div className="d-flex justify-content-center align-items-center pb-3">
-                    <i className="fa-solid fa-copyright text-white fs-4 me-2" style={{textAlign: "center"}}></i>
-                    <span className="text-white">Copyright 2023 CodePilot</span>
-                </div>
             </Container>
+            <div className="d-flex justify-content-center align-items-center pb-3" style={{width: "100vw", textAlign: "center"}}>
+                <i className="fa-solid fa-copyright text-white fs-4 me-2"></i>
+                <span className="text-white">Copyright 2023 CodePilot</span>
+            </div>
         </div>
     )
 }

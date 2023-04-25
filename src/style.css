@@ -1,4 +1,4 @@
-html {
+#root {
     /* border: 1px solid red; */
     overflow-x: hidden;
 }
@@ -52,6 +52,16 @@ html {
 
 
 
+.collaps, .line {
+    /* color: white; */
+    width: 2rem;
+    height: .1em;
+    background-color: white;
+    font-weight: 600;
+    border: none;
+}
+
+
 @media (min-width: 992px) {
 
     .link {
@@ -84,7 +94,7 @@ html {
 
     .sidebar {
         /* background: rgba(91, 90, 88, 0.6); */
-        background: rgb(230,230,231);
+        background: black;
     }
 
     .nav-items {

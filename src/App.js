@@ -8,8 +8,18 @@ export default function App() {
   const [state, setState] = useState({
     color: "white",
     large: window.innerWidth >= 992 ? true : false,
-    scroll: false
+    scroll: false,
+    show: false
   })
+
+  function show() {
+    setState(prev => {
+      return {
+        ...prev,
+        show: !prev.show
+      }
+    })
+  }
 
   function scrollUp() {
     document.documentElement.scrollTo({
@@ -61,7 +71,7 @@ export default function App() {
 
   return (
     <>
-      <Header state={state}/>
+      <Header state={state} show={show}/>
       <Body state={state}/>
       <Footer state={state} scrollUp={scrollUp}/>
     </>
