@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from "./components/Header"
+import React, { useState, useEffect} from "react"
+import "./style.css"
 
-function App() {
+export default function App() {
+  const [state, setState] = useState({
+    color: "white",
+    large: window.innerWidth >= 992 ? true : false
+  })
+
+
+  useEffect(() => { // in case window is resized
+    const handleResize = () => {
+      if(window.innerWidth >= 992) {
+        setState(prev => {
+          return {
+            color: "white",
+            large: true
+          }
+        });
+      } else {
+        setState(prev => {
+          return {
+            color: "black",
+            large: false
+          }
+        });
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Header updateState={setState} state={state}/>
+  )
 }
-
-export default App;

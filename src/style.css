@@ -1,0 +1,109 @@
+* {
+    /* border: 1px solid red; */
+}
+
+#header {
+    position: relative;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/pexels-lisa-fotios-16129703.jpg');
+    background-position-y: 15%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#try {
+    display: flex;
+    justify-content: center;
+}
+
+#signin {
+    transition: all .3s;
+}
+
+
+#signin:hover {
+    transform: scale(1.05)
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+}
+
+
+
+
+
+#logoFirst {
+    font-weight: 900;
+}
+
+#logoFirst {
+    font-weight: 500; 
+}
+
+
+
+@media (min-width: 992px) {
+
+    .link {
+        position: relative;
+    }
+
+    .link::after {
+        content: "";
+        width: 0;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 2px;
+        background-color: white;
+        transition: width .5s;
+    }
+
+    .link:hover::after {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width: 992px) {
+    .title {
+        text-align: center;
+        width: 90%;
+    }
+
+    .sidebar {
+        /* background: rgba(91, 90, 88, 0.6); */
+        background: rgb(230,230,231);
+    }
+
+    .nav-items {
+        /* background-color: black;
+        position: relative;
+        z-index: 2; */
+    }
+
+    /* .nav-items-collapse {
+        background-color: black;
+        position: relative;
+        width: 100vw;
+        z-index: 2;
+    } */
+
+}
+
+@media (min-width: 993px) and (max-width: 1266px) {
+    .title {
+        text-align: center;
+        width: 60%;
+    }
+}
