@@ -26,7 +26,7 @@ export default function Body(props){
                                 <img src={pic} alt="picture1" style={{width: "100%", height: "500px"}}/>
                             </Col>
                             <Col>
-                                <h1 className='display-5 fw-normal mt-5 text-white' style={{textAlign: "center"}}>What is CodePilot?</h1>
+                                <h1 className='display-5 fw-normal mt-5 text-white' style={{textAlign: "center"}}>What does it do??</h1>
                                 <p className="fs-5 text-white" style={{textAlign: "center"}}>
                                     This system takes in code from the user and then returns the corrected version of the code along 
                                     with explanations of the changes implemented and an analysis of the provided code. It was 
@@ -67,7 +67,7 @@ export default function Body(props){
                             </p>
                         </Col>
                         <Col>
-                            <h1 className="fs-2 text-white fw-light" style={{textAlign: "center"}}>Syntax Correction</h1>
+                            <h1 className="fs-2 text-white fw-light" style={{textAlign: "center"}}>Multi-Language Support</h1>
                             <p className="fs-6 text-white" style={{textAlign: "center"}}>
                             Provide automated code fixing for multiple programming languages, such as Python, Java, C++, and others.
                             </p></Col>
