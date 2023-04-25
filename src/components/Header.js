@@ -1,5 +1,4 @@
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -7,26 +6,23 @@ import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 export default function Header(props) {
+    const afterScroll = {
+        backgroundColor: "black",
+        // opacity: '1',
+        transition: "all .5s"
+    }
+
+    const initialStyle = {
+        backgroundColor: "transparent",
+        // opacity: '0',
+        transition: "all .5s"
+    }
+
     return (
         <div id='header'>
-            {/* <Navbar expand="lg" className='navbar'>
+            <Navbar fixed="top" expand="lg" className="navbar" style={props.state.scroll ? afterScroll : initialStyle}>
                 <Container>
                     <Navbar.Brand href="#home" className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" id="toggle" className="text-white fs-2" />
-                    <Navbar.Collapse id="basic-navbar-nav" className='nav-items-collapse'>
-                        <Nav className="me-auto ms-auto nav-items">
-                            <Nav.Link href="#playground" className='fs-5 text-white link me-4'>Playground</Nav.Link>
-                            <Nav.Link href="#github" className='fs-5 text-white link me-4'>Github</Nav.Link>
-                            <Nav.Link href="#suggestions" className='fs-5 text-white link'>Suggestions</Nav.Link>
-                            {!props.state.large && <Nav.Link href="#signin" className="fs-5 text-white link">Sign In</Nav.Link>}
-                        </Nav>
-                        {props.state.large && <Nav.Link href="#signin" id="signin" className="fs-4 text-white">Sign In</Nav.Link>}
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar> */}
-                <Navbar expand="lg" className="navbar">
-                <Container>
-                <Navbar.Brand href="#home" className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />
                     <Navbar.Offcanvas
                     id={`offcanvasNavbar-expand-lg`}

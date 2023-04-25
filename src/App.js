@@ -1,12 +1,34 @@
 import Header from "./components/Header"
+import Body from "./components/Body"
+import Footer from "./components/Footer"
 import React, { useState, useEffect} from "react"
 import "./style.css"
 
 export default function App() {
   const [state, setState] = useState({
     color: "white",
-    large: window.innerWidth >= 992 ? true : false
+    large: window.innerWidth >= 992 ? true : false,
+    scroll: false
   })
+  
+
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 0) {
+      setState(prev => {
+        return {
+          ...prev,
+          scroll: true
+        }
+      });
+    } else {
+      setState(prev => {
+        return {
+          ...prev,
+          scroll: false
+        }
+      });
+    }
+  }, {passive: true}); // this optional argument is supposed to improve scrolling performance
 
 
   useEffect(() => { // in case window is resized
@@ -32,6 +54,10 @@ export default function App() {
   }, []);
 
   return (
-    <Header updateState={setState} state={state}/>
+    <>
+      <Header state={state}/>
+      <Body state={state}/>
+      <Footer state={state}/>
+    </>
   )
 }
