@@ -10,7 +10,13 @@ export default function App() {
     large: window.innerWidth >= 992 ? true : false,
     scroll: false
   })
-  
+
+  function scrollUp() {
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  }  
 
   window.addEventListener('scroll', function() {
     if (window.scrollY > 0) {
@@ -57,7 +63,7 @@ export default function App() {
     <>
       <Header state={state}/>
       <Body state={state}/>
-      <Footer state={state}/>
+      <Footer state={state} scrollUp={scrollUp}/>
     </>
   )
 }

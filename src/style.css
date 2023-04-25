@@ -101,7 +101,7 @@
 
 }
 
-@media (min-width: 993px) and (max-width: 1266px) {
+@media (min-width: 992px) and (max-width: 1266px) {
     .title {
         text-align: center;
         width: 60%;
