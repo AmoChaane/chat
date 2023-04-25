@@ -56,19 +56,19 @@ export default function Body(props){
                     <Row className="flex-lg-row flex-column">
                         <Col>
                             <h1 className="fs-2 text-white fw-light" style={{textAlign: "center"}}>Syntax Correction</h1>
-                            <p className="fs-6 text-white">
+                            <p className="fs-6 text-white" style={{textAlign: "center"}}>
                                 Automatically correct syntax errors, missing or misplaced brackets, and other common coding mistakes.
                             </p>
                         </Col>
                         <Col>
                             <h1 className="fs-2 text-white fw-light" style={{textAlign: "center"}}>Code Formatting</h1>
-                            <p className="fs-6 text-white">
+                            <p className="fs-6 text-white" style={{textAlign: "center"}}>
                             Automatically format code to adhere to standard coding conventions and improve readability.
                             </p>
                         </Col>
                         <Col>
                             <h1 className="fs-2 text-white fw-light" style={{textAlign: "center"}}>Syntax Correction</h1>
-                            <p className="fs-6 text-white">
+                            <p className="fs-6 text-white" style={{textAlign: "center"}}>
                             Provide automated code fixing for multiple programming languages, such as Python, Java, C++, and others.
                             </p></Col>
                     </Row>
