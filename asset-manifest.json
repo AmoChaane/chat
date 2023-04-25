@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/code-pilot/static/css/main.eb100813.css",
+    "main.js": "/code-pilot/static/js/main.102163af.js",
+    "static/media/pexels-lisa-fotios-16129703.jpg": "/code-pilot/static/media/pexels-lisa-fotios-16129703.562e6907764f34b04d87.jpg",
+    "index.html": "/code-pilot/index.html",
+    "main.eb100813.css.map": "/code-pilot/static/css/main.eb100813.css.map",
+    "main.102163af.js.map": "/code-pilot/static/js/main.102163af.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb100813.css",
+    "static/js/main.102163af.js"
+  ]
+}
