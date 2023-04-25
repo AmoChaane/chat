@@ -20,7 +20,7 @@ export default function Header(props) {
 
     return (
         <div id='header'>
-            <Navbar fixed="top" expand="lg" className="navbar" style={props.state.scroll ? afterScroll : initialStyle}>
+            <Navbar fixed="top" expand="lg" className="navbar pt-0" style={props.state.scroll ? afterScroll : initialStyle}>
                 <Container>
                     <Navbar.Brand href="#home" className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Navbar.Brand>
                     <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-lg`} />

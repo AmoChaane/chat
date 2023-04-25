@@ -1,5 +1,6 @@
-* {
+html {
     /* border: 1px solid red; */
+    overflow-x: hidden;
 }
 
 #header {
