@@ -17,7 +17,7 @@ export default function Footer(props) {
                     </div>
                 </div>
                 <Stack gap={4} className="mt-5 mb-4">
-                    <Nav.Link href="#action1" className='fs-5 me-4 text-white'>Playground</Nav.Link>
+                    <Nav.Link href="/editor" className='fs-5 me-4 text-white'>Playground</Nav.Link>
                     <Nav.Link href="#action2" className='fs-5 me-4 text-white'>Github</Nav.Link>
                     <Nav.Link href="#action2" className='fs-5 text-white'>Suggestion</Nav.Link>
                 </Stack>

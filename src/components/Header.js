@@ -4,8 +4,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link } from "react-router-dom";
 
 export default function Header(props) {
+    console.log('header');
     const afterScroll = {
         backgroundColor: "black",
         // opacity: '1',
@@ -38,7 +40,9 @@ export default function Header(props) {
                     </Offcanvas.Header>
                     <Offcanvas.Body className="sidebar">
                         <Nav className="justify-content-center flex-grow-1 pe-3">
-                            <Nav.Link href="#action1" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link me-4 text-white'>Playground</Nav.Link>
+                            <Nav.Link href="/editor" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link me-4 text-white'>Playground</Nav.Link>
+                            {/* <Link style={{color: "white", textDecoration: "none"}} to="/editor">Playground</Link> */}
+                            {/* <Link to="/editor">Profile</Link> */}
                             <Nav.Link href="#action2" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link me-4 text-white'>Github</Nav.Link>
                             <Nav.Link href="#action2" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link text-white'>Suggestion</Nav.Link>
                             {!props.state.large && <Nav.Link href="#signin" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className="fs-5 link text-white">Sign In</Nav.Link>}
@@ -51,7 +55,7 @@ export default function Header(props) {
             <Col className='title row-gap-3'>
                 <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
                 <div id="try">
-                    <Button variant="outline-light btn-lg btn">Try it Online</Button>
+                    <Button variant="outline-light btn-lg btn"><a id="tryItOnline" href="/editor">Try it Online</a></Button>
                 </div>
             </Col>
         </div>

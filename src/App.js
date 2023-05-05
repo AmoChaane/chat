@@ -4,13 +4,14 @@ import Footer from "./components/Footer"
 import React, { useState, useEffect} from "react"
 import "./style.css"
 
-export default function App() {
+function App() {
   const [state, setState] = useState({
     color: "white",
     large: window.innerWidth >= 992 ? true : false,
     scroll: false,
     show: false
   })
+  console.log('ran');
 
   function show() {
     setState(prev => {
@@ -48,6 +49,7 @@ export default function App() {
 
 
   useEffect(() => { // in case window is resized
+    console.log('useEffect fired');
     const handleResize = () => {
       if(window.innerWidth >= 992) {
         setState(prev => {
@@ -77,3 +79,7 @@ export default function App() {
     </>
   )
 }
+{/* <Link to="/profile">Profile</Link> */}
+
+
+export default App

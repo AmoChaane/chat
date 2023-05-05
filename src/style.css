@@ -1,3 +1,8 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
 #root {
     /* border: 1px solid red; */
     overflow-x: hidden;
@@ -17,6 +22,15 @@
     justify-content: center;
 }
 
+#tryItOnline {
+    text-decoration: none;
+    color: white
+}
+
+
+#tryItOnline:hover {
+    color: black;
+}
 #signin {
     transition: all .3s;
 }
@@ -24,6 +38,90 @@
 
 #signin:hover {
     transform: scale(1.05)
+}
+
+.pre-wrap {
+    white-space: pre-wrap;
+}
+
+#container {
+    position: relative;
+}
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 9;
+}
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+pre {
+    background-color: #282c34;
+    color: #abb2bf;
+    padding: 16px;
+    overflow: auto;
+    font-family: Consolas, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    height: 100%;
+    border-left: 3px solid black;
 }
 
 .title {
@@ -61,6 +159,15 @@
     border: none;
 }
 
+#code {
+    width: 100%;
+    transition: all 2s;
+}
+
+#response {
+    width: 0%;
+    transition: all 2s;
+}
 
 @media (min-width: 992px) {
 
@@ -117,4 +224,35 @@
         text-align: center;
         width: 60%;
     }
+}
+
+
+#sidebar {
+    background-color: #333334;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px; /* width of the scrollbar */
+    background-color: #444654; /* background color */
+    /* border-radius: 10px; */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #888; /* color of the thumb */
+    border-radius: 10px; /* border radius to make the ends rounded */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* color of the thumb on hover */
+  }
+
+
+.cm-gutter, .cm-activeLineGutter {
+    background: #232223;
+}
+
+.cm-editor{
+    height: 100%;
+    background: #232223;
 }
