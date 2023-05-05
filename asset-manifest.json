@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/code-pilot/static/css/main.4d663999.css",
-    "main.js": "/code-pilot/static/js/main.91448a16.js",
+    "main.js": "/code-pilot/static/js/main.76699f11.js",
     "static/media/pexels-scott-webb-2346594.jpg": "/code-pilot/static/media/pexels-scott-webb-2346594.0cc1a1a61e717381ce65.jpg",
     "static/media/pexels-lisa-fotios-16129703.jpg": "/code-pilot/static/media/pexels-lisa-fotios-16129703.562e6907764f34b04d87.jpg",
     "static/media/pexels-lucky-5374862.jpg": "/code-pilot/static/media/pexels-lucky-5374862.27e21cff87c738aac829.jpg",
     "index.html": "/code-pilot/index.html",
     "main.4d663999.css.map": "/code-pilot/static/css/main.4d663999.css.map",
-    "main.91448a16.js.map": "/code-pilot/static/js/main.91448a16.js.map"
+    "main.76699f11.js.map": "/code-pilot/static/js/main.76699f11.js.map"
   },
   "entrypoints": [
     "static/css/main.4d663999.css",
-    "static/js/main.91448a16.js"
+    "static/js/main.76699f11.js"
   ]
 }
