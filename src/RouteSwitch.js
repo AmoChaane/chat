@@ -9,7 +9,7 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <Routes> 
-        <Route path="/" element={<App />} /> {/* This link is the homepage bcos it's the first one */}
+        <Route path="/code-pilot" element={<App />} /> {/* This link is the homepage bcos it's the first one */}
         <Route path="/editor" element={<Editor />} />
       </Routes>
     </BrowserRouter>

@@ -144,7 +144,7 @@ function Editor() {
             <Col id='sidebar' lg={3} className='d-flex flex-column justify-content-between h-100 p-4'>
                 <div style={{maxHeight: "50%"}}>
                     <div style={{textAlign: "center"}}>
-                      <a href="/" style={{textAlign: "center", textDecoration: "none"}} className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></a>
+                      <a href="/code-pilot" style={{textAlign: "center", textDecoration: "none"}} className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></a>
                     </div>
                     <h3 className='text-white fw-5 fs-5 mt-4'>History</h3>
                     <Stack className="text-white justify-content-center" gap={3} style={{maxHeight: "100%", overflow: "auto"}}>
@@ -198,7 +198,7 @@ function Editor() {
                         </div>
                         <div className='d-flex align-items-center' style={{columnGap: "25px"}}>
                             <i className="fa-solid fa-house"></i>
-                            <a style={{textDecoration: "none"}} href="/" className='fs-5 m-0 text-white'>Return to Home</a>
+                            <a style={{textDecoration: "none"}} href="/code-pilot" className='fs-5 m-0 text-white'>Return to Home</a>
                         </div>
                     </div>
                 </div>
