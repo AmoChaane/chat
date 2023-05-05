@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route, HashRouter} from "react-router-dom";
 import App from "./App";
 import Editor from "./components/editor/Editor"
 
@@ -7,12 +7,12 @@ import Editor from "./components/editor/Editor"
 const RouteSwitch = () => {
   console.log('routeSwitch');
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes> 
         <Route path="/code-pilot" element={<App />} /> {/* This link is the homepage bcos it's the first one */}
         <Route path="/editor" element={<Editor />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
