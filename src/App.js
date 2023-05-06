@@ -13,6 +13,8 @@ function App() {
   })
   console.log('ran');
 
+  document.querySelector("#root").style.display = 'block';
+
   function show() {
     setState(prev => {
       return {

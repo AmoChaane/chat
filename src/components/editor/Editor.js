@@ -25,6 +25,12 @@ function Editor() {
     show: false
   })
 
+  document.querySelector("#root").style.display = 'flex';
+  document.querySelector("#root").style.flexDirection = 'column';
+  document.querySelector("#root").style.height = '100vh';
+  // flex-direction: column;
+  //   height: 100vh;
+
 
   useEffect(() => { // in case window is resized
     const handleResize = () => {

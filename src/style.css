@@ -6,9 +6,9 @@ a {
 #root {
     /* border: 1px solid red; */
     overflow-x: hidden;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100vh; */
 }
 
 #header {
