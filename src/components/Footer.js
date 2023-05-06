@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Stack from 'react-bootstrap/Stack';
+import { Link } from "react-router-dom";
 
 export default function Footer(props) {
     return (
@@ -17,7 +18,7 @@ export default function Footer(props) {
                     </div>
                 </div>
                 <Stack gap={4} className="mt-5 mb-4">
-                    <Nav.Link href="/editor" className='fs-5 me-4 text-white'>Playground</Nav.Link>
+                    <Link style={{textDecoration: "none"}} to="/editor" className='fs-5 me-4 text-white'>Playground</Link>
                     <Nav.Link href="#action2" className='fs-5 me-4 text-white'>Github</Nav.Link>
                     <Nav.Link href="#action2" className='fs-5 text-white'>Suggestion</Nav.Link>
                 </Stack>

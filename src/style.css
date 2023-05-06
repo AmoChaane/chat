@@ -40,8 +40,28 @@ a {
     transform: scale(1.05)
 }
 
+.history-item {
+    padding: 5px 0 5px 5px;
+    border-radius: 7px;
+    transition: all .05s;
+    white-space: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+}
+
+.history-item:hover{
+    background-color: #232223;
+    cursor: pointer;
+}
+
+#return-home:hover, #settings:hover, #clear-history:hover {
+    background-color: #232223;
+    cursor: pointer;
+}
+
 .pre-wrap {
     white-space: pre-wrap;
+    border: none;
 }
 
 #container {
@@ -159,7 +179,7 @@ pre {
     border: none;
 }
 
-#code {
+/* #code {
     width: 100%;
     transition: all 2s;
 }
@@ -167,7 +187,7 @@ pre {
 #response {
     width: 0%;
     transition: all 2s;
-}
+} */
 
 @media (min-width: 992px) {
 
@@ -204,18 +224,7 @@ pre {
         background: black;
     }
 
-    .nav-items {
-        /* background-color: black;
-        position: relative;
-        z-index: 2; */
-    }
 
-    /* .nav-items-collapse {
-        background-color: black;
-        position: relative;
-        width: 100vw;
-        z-index: 2;
-    } */
 
 }
 

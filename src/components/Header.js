@@ -40,7 +40,7 @@ export default function Header(props) {
                     </Offcanvas.Header>
                     <Offcanvas.Body className="sidebar">
                         <Nav className="justify-content-center flex-grow-1 pe-3">
-                            <Nav.Link href="/editor" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link me-4 text-white'>Playground</Nav.Link>
+                            <Nav.Link style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='link text-white'><Link className='fs-5 me-4 text-white' style={{textDecoration: "none"}} to="/editor">Playground</Link></Nav.Link>
                             {/* <Link style={{color: "white", textDecoration: "none"}} to="/editor">Playground</Link> */}
                             {/* <Link to="/editor">Profile</Link> */}
                             <Nav.Link href="#action2" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link me-4 text-white'>Github</Nav.Link>
@@ -55,7 +55,8 @@ export default function Header(props) {
             <Col className='title row-gap-3'>
                 <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
                 <div id="try">
-                    <Button variant="outline-light btn-lg btn"><a id="tryItOnline" href="/editor">Try it Online</a></Button>
+                    {/* <Button variant="outline-light btn-lg btn"><Link id="tryItOnline" to="/editor">Try it Online</Link></Button> */}
+                    <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
                 </div>
             </Col>
         </div>

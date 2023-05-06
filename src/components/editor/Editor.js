@@ -7,14 +7,49 @@ import { Stack } from 'react-bootstrap';
 import {basicSetup} from "codemirror"
 import {EditorView, keymap} from "@codemirror/view"
 import {indentWithTab} from "@codemirror/commands"
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import Navbar from 'react-bootstrap/Navbar';
 
 function Editor() {
-  console.log('editor');
   const [split, setSplit] = React.useState(false);
   const editorRef = useRef(null);
   const responseRef = useRef(null);
   const spinnerRef = useRef(null);
+  const [show, setShow] = useState(false);
+  const [state, setState] = useState({
+    color: "white",
+    large: window.innerWidth >= 992 ? true : false,
+    scroll: false,
+    show: false
+  })
+
+
+  useEffect(() => { // in case window is resized
+    const handleResize = () => {
+      if(window.innerWidth >= 992) {
+        setState(prev => {
+          return {
+            color: "white",
+            large: true
+          }
+        });
+      } else {
+        setState(prev => {
+          return {
+            color: "black",
+            large: false
+          }
+        });
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
 
     const chalky = "#e5c07b",
@@ -97,8 +132,6 @@ function Editor() {
       }, {dark: true})
 
       useEffect(() => {
-        console.log('component mounted');
-        // const { basicSetup, indentWithTab, myTheme } = extensions;
         if (editorRef.current) {
           new EditorView({
             extensions: [basicSetup, keymap.of([indentWithTab]), myTheme],
@@ -137,81 +170,175 @@ function Editor() {
 
 
     return (
-        <Container fluid id="container" className="p-0 d-flex" style={{height: "100vh"}}>
+      <>
+        <Navbar bg="dark" className="d-lg-none p-0" style={{height: "10vh"}}>
+          <Container fluid className="">
+            <h1 onClick={handleShow}><i style={{color: "#B0B1BB", cursor: "pointer"}} className="fs-3 fa-solid fa-bars"></i></h1>
+            <div style={{width: "100%", textAlign: "center"}}>
+              <Link to="/" style={{textAlign: "center", textDecoration: "none"}} className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Link>
+            </div>
+          </Container>
+        </Navbar>
+        <Container fluid id="container" className="p-0 d-flex" style={{height: state.large ? "100vh" : "90vh"}}>
           <div ref={spinnerRef} id="overlay">
             <div className="lds-ripple"><div></div><div></div></div>
           </div>
-            <Col id='sidebar' lg={3} className='d-flex flex-column justify-content-between h-100 p-4'>
-                <div style={{maxHeight: "50%"}}>
-                    <div style={{textAlign: "center"}}>
-                      <a href="/code-pilot" style={{textAlign: "center", textDecoration: "none"}} className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></a>
-                    </div>
-                    <h3 className='text-white fw-5 fs-5 mt-4'>History</h3>
-                    <Stack className="text-white justify-content-center" gap={3} style={{maxHeight: "100%", overflow: "auto"}}>
-                        {/* <h4>No History Yet -_-</h4> */}
-                        <div className='d-flex align-items-center' style={{columnGap: "20px"}}>
+          <Offcanvas show={show} onHide={handleClose} style={{background: "#333334"}} className="text-white  p-3">
+              <Offcanvas.Header closeButton closeVariant='white'>
+                {/* <Offcanvas.Title>Responsive offcanvas</Offcanvas.Title> */}
+              </Offcanvas.Header>
+              {/* <Offcanvas.Body className="pt-0" style={{height: "100vh"}}> */}
+              <h3 className='text-white fw-5 fs-5 mt-4'>History</h3>
+                <div className="text-white" style={{overflowY: "auto"}}>
+                    <Stack gap={3} className=''>
+                      <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
-                            <h6>Javascript Functions</h6>
+                            <span className='fs-6'>Javascript Functions</span>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "20px"}}>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
-                            <h6>Control Flow</h6>
+                            <span className='fs-6'>Control Flow</span>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "20px"}}>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
-                            <h6>Conditional Statement</h6>
+                            <span className='fs-6'>Conditional Statement</span>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "20px"}}>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
-                            <h6>Binary Operator</h6>
+                            <span className='fs-6'>Binary Operator</span>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "20px"}}>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
-                            <h6>Memory Allocator</h6>
+                            <span className='fs-6'>Memory Allocator</span>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "20px"}}>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
-                            <h6>Python Variables</h6>
+                            <span className='fs-6'>Python Variables</span>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "20px"}}>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
-                            <h6>Game Design vs Game Development</h6>
+                            <span className='fs-6'>Game Design vs Game Development</span>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "20px"}}>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
-                            <h6>Game Design vs Game Development</h6>
-                        </div>
-                        
-                        
-                    </Stack>
+                            <span className='fs-6'>Game Design vs Game Development</span>
+                        </div>  
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Game Design vs Game Development</span>
+                        </div>  
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Game Design vs Game Development</span>
+                        </div>  
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Game Design vs Game Development</span>
+                        </div>  
+                    </Stack>  
                 </div>
-                <div style={{maxHeight: "50%"}}>
-                    <div className='mb-4' style={{height: "1px", background: "white"}}></div>
+                <div>
+                    <div className='mb-4 mt-3' style={{height: "1px", background: "white"}}></div>
                     <div className='d-flex flex-column gap-4 text-white'>
-                        <div className='d-flex align-items-center' style={{columnGap: "25px"}}>
+                        <div className='d-flex align-items-center history-item' style={{columnGap: "25px"}}>
                             <i className="fa-solid fa-trash"></i>
                             <a style={{textDecoration: "none"}}  className='fs-5 m-0 text-white'>Clear History</a>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "25px"}}>
+                        <div className='d-flex align-items-center history-item' style={{columnGap: "25px"}}>
                             <i className="fa-solid fa-gear"></i>
                             <a style={{textDecoration: "none"}}  className='fs-5 m-0 text-white'>Settings</a>
                         </div>
-                        <div className='d-flex align-items-center' style={{columnGap: "25px"}}>
+                        <div className='d-flex align-items-center history-item' style={{columnGap: "25px"}}>
                             <i className="fa-solid fa-house"></i>
-                            <a style={{textDecoration: "none"}} href="/code-pilot" className='fs-5 m-0 text-white'>Return to Home</a>
+                            <Link to="/" style={{textDecoration: "none"}} className='fs-5 m-0 text-white'>Return to Home</Link>
+                        </div>
+                    </div>
+                </div>
+              {/* </Offcanvas.Body> */}
+            </Offcanvas>
+            <Col id='sidebar' lg={3} className='d-lg-flex d-none flex-column justify-content-between h-100 p-4'>
+                <Link to="/" style={{textAlign: "center", textDecoration: "none"}} className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Link>
+                <h3 className='text-white fw-5 fs-5 mt-4'>History</h3>
+                <div className="text-white" style={{overflowY: "auto"}}>
+                    <Stack gap={3} className='pe-2'>
+                      <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Javascript Functions</span>
+                        </div>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Control Flow</span>
+                        </div>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Conditional Statement</span>
+                        </div>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Binary Operator</span>
+                        </div>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Memory Allocator</span>
+                        </div>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Python Variables</span>
+                        </div>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Game Design vs Game Development</span>
+                        </div>
+                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
+                            <i className="fa-solid fa-message"></i>
+                            <span className='fs-6'>Game Design vs Game Development</span>
+                        </div>  
+                    </Stack>  
+                </div>
+                <div>
+                    <div className='mb-4 mt-3' style={{height: "1px", background: "white"}}></div>
+                    <div className='d-flex flex-column gap-4 text-white'>
+                        <div className='d-flex align-items-center history-item' style={{columnGap: "25px"}}>
+                            <i className="fa-solid fa-trash"></i>
+                            <a style={{textDecoration: "none"}}  className='fs-5 m-0 text-white'>Clear History</a>
+                        </div>
+                        <div className='d-flex align-items-center history-item' style={{columnGap: "25px"}}>
+                            <i className="fa-solid fa-gear"></i>
+                            <a style={{textDecoration: "none"}}  className='fs-5 m-0 text-white'>Settings</a>
+                        </div>
+                        <div className='d-flex align-items-center history-item' style={{columnGap: "25px"}}>
+                            <i className="fa-solid fa-house"></i>
+                            <Link to="/" style={{textDecoration: "none"}} className='fs-5 m-0 text-white'>Return to Home</Link>
                         </div>
                     </div>
                 </div>
             </Col>
-            <Col id='main' className='d-flex'>
-                <div ref={editorRef} id='code' className='h-100' style={{position: 'relative', width: !split ? "100%" : "50%", transition: "all 2s"}}>
-                  <i onClick={call} style={{position: "absolute", bottom: "10px", right: "10px", zIndex: "3", cursor: "pointer"}} id="enter" className="fs-3 text-white fa-solid fa-arrow-right"></i>
+            <Col>
+            {
+              state.large ?
+                <div className='d-flex h-100 w-100'>
+                  <div ref={editorRef} className='h-100' style={{position: 'relative', width: !split ? "100%" : "50%", transition: "all 2s"}}>
+                    <i onClick={call} style={{position: "absolute", bottom: "10px", right: "10px", zIndex: "3", cursor: "pointer"}} id="enter" className="fs-3 text-white fa-solid fa-arrow-right"></i>
+                  </div>
+                  <div className='' style={{ width: !split ? "0%" : "50%", transition: "all 2s", maxWidth: "50%"}}>
+                    <pre ref={responseRef} className='pre-wrap'></pre>
+                  </div>
                 </div>
-                <div id='response' className='h-100' style={{ width: !split ? "0%" : "50%", transition: "all 2s", maxWidth: "50%"}}>
-                  <pre ref={responseRef} className='pre-wrap'></pre>
+            
+                  :
+
+                <div style={{overflow: "hidden"}} className='d-flex flex-column h-100 w-100'>
+                  <div ref={editorRef} className='' style={{position: 'relative', height: !split ? "100%" : "50%", transition: "all 2s"}}>
+                    <i onClick={call} style={{position: "absolute", bottom: "10px", right: "10px", zIndex: "3", cursor: "pointer"}} id="enter" className="fs-3 text-white fa-solid fa-arrow-right"></i>
+                  </div>
+                  <div className='' style={{ height: !split ? "0%" : "50%", transition: "all 2s", maxHeight: "50%"}}>
+                    <pre ref={responseRef} className='pre-wrap'></pre>
+                  </div>
                 </div>
+            }
             </Col>
         </Container>
+      </>
     )
 }
 

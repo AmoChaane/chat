@@ -49,7 +49,6 @@ function App() {
 
 
   useEffect(() => { // in case window is resized
-    console.log('useEffect fired');
     const handleResize = () => {
       if(window.innerWidth >= 992) {
         setState(prev => {
