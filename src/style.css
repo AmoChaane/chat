@@ -6,6 +6,9 @@ a {
 #root {
     /* border: 1px solid red; */
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 #header {
@@ -54,10 +57,8 @@ a {
     cursor: pointer;
 }
 
-#return-home:hover, #settings:hover, #clear-history:hover {
-    background-color: #232223;
-    cursor: pointer;
-}
+
+
 
 .pre-wrap {
     white-space: pre-wrap;

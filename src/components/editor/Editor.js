@@ -171,7 +171,7 @@ function Editor() {
 
     return (
       <>
-        <Navbar bg="dark" className="d-lg-none p-0" style={{height: "10vh"}}>
+        <Navbar className="d-lg-none p-0" style={{background: "#232223", borderBottom: "1px solid #b0b1bb"}}>
           <Container fluid className="">
             <h1 onClick={handleShow}><i style={{color: "#B0B1BB", cursor: "pointer"}} className="fs-3 fa-solid fa-bars"></i></h1>
             <div style={{width: "100%", textAlign: "center"}}>
@@ -179,7 +179,7 @@ function Editor() {
             </div>
           </Container>
         </Navbar>
-        <Container fluid id="container" className="p-0 d-flex" style={{height: state.large ? "100vh" : "90vh"}}>
+        <Container fluid id="container" className="p-0 d-flex" style={{height: "100%"}}>
           <div ref={spinnerRef} id="overlay">
             <div className="lds-ripple"><div></div><div></div></div>
           </div>
@@ -328,10 +328,10 @@ function Editor() {
                   :
 
                 <div style={{overflow: "hidden"}} className='d-flex flex-column h-100 w-100'>
-                  <div ref={editorRef} className='' style={{position: 'relative', height: !split ? "100%" : "50%", transition: "all 2s"}}>
+                  <div ref={editorRef} className='' style={{position: 'relative', height: !split ? "100%" : "45%", transition: "all 2s"}}>
                     <i onClick={call} style={{position: "absolute", bottom: "10px", right: "10px", zIndex: "3", cursor: "pointer"}} id="enter" className="fs-3 text-white fa-solid fa-arrow-right"></i>
                   </div>
-                  <div className='' style={{ height: !split ? "0%" : "50%", transition: "all 2s", maxHeight: "50%"}}>
+                  <div className='' style={{ height: !split ? "0%" : "55%", transition: "all 2s", maxHeight: "55%"}}>
                     <pre ref={responseRef} className='pre-wrap'></pre>
                   </div>
                 </div>
