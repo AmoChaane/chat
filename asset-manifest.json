@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/code-pilot/static/css/main.ebaae488.css",
-    "main.js": "/code-pilot/static/js/main.ef2038eb.js",
+    "main.css": "/code-pilot/static/css/main.27d57390.css",
+    "main.js": "/code-pilot/static/js/main.369e339a.js",
     "static/media/pexels-scott-webb-2346594.jpg": "/code-pilot/static/media/pexels-scott-webb-2346594.0cc1a1a61e717381ce65.jpg",
     "static/media/pexels-lisa-fotios-16129703.jpg": "/code-pilot/static/media/pexels-lisa-fotios-16129703.562e6907764f34b04d87.jpg",
     "static/media/pexels-lucky-5374862.jpg": "/code-pilot/static/media/pexels-lucky-5374862.27e21cff87c738aac829.jpg",
     "index.html": "/code-pilot/index.html",
-    "main.ebaae488.css.map": "/code-pilot/static/css/main.ebaae488.css.map",
-    "main.ef2038eb.js.map": "/code-pilot/static/js/main.ef2038eb.js.map"
+    "main.27d57390.css.map": "/code-pilot/static/css/main.27d57390.css.map",
+    "main.369e339a.js.map": "/code-pilot/static/js/main.369e339a.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebaae488.css",
-    "static/js/main.ef2038eb.js"
+    "static/css/main.27d57390.css",
+    "static/js/main.369e339a.js"
   ]
 }
