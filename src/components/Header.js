@@ -24,7 +24,9 @@ export default function Header(props) {
         <div id='header'>
             <Navbar fixed="top" expand="lg" className="navbar pt-0" style={props.state.scroll ? afterScroll : initialStyle}>
                 <Container>
-                    <Navbar.Brand href="#home" className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Navbar.Brand>
+                    <Link to="/" style={{textDecoration: "none"}}>
+                        <Navbar.Brand className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Navbar.Brand>
+                    </Link>
                     <span className='' style={{display: "flex", flexDirection: "column", rowGap: "7px"}}>
                         <Navbar.Toggle className="d-lg-none d-block'" bsPrefix="collaps" aria-controls={`offcanvasNavbar-expand-lg`} />
                         <span className="line d-lg-none d-block"></span>

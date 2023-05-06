@@ -25,6 +25,8 @@ function Editor() {
     show: false
   })
 
+  let int;
+
   document.querySelector("#root").style.display = 'flex';
   document.querySelector("#root").style.flexDirection = 'column';
   document.querySelector("#root").style.height = '100vh';
@@ -158,11 +160,10 @@ function Editor() {
         setTimeout(() =>  {
           spinnerRef.current.style.display = 'none';
           let newStr = "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis voluptatibus consectetur odio non ratione pariatur excepturi, laudantium, quis ipsa, libero modi minima veritatis? Omnis atque temporibus corrupti esse illum? Eligendi a facilis praesentium quia impedit error. Alias nisi odio vitae accusantium natus incidunt aperiam, ipsum corrupti laudantium error officia magni, voluptate, expedita eveniet beatae! Tempore aperiam minus laboriosam modi id dolor architecto enim temporibus asperiores delectus! Aliquid culpa modi iusto quibusdam illum, vitae explicabo saepe fugit, qui repellat corporis ipsa porro similique veniam dolore suscipit vel eum ex ad iure. Commodi at quam atque officiis consequatur aperiam corrupti, amet nostrum!"
-          let interval;
           setSplit(true)
 
           responseRef.current.textContent = '';
-          interval = setInterval(() => {
+          int = setInterval(() => {
             if(newStr) {
               responseRef.current.textContent += newStr[0];
               newStr = newStr.slice(1)
@@ -170,9 +171,13 @@ function Editor() {
             }
           }, 10);
         }, 3000)
-
-        
       }
+
+      useEffect(() => {
+        return () => {
+          clearInterval(int)
+        }
+      }, []);
 
 
     return (
