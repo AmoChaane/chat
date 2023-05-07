@@ -164,8 +164,8 @@ function Editor() {
 
           responseRef.current.textContent = '';
           int = setInterval(() => {
-            if(newStr) {
-              responseRef.current.textContent += newStr[0];
+            if(newStr && responseRef.current) {
+              if(responseRef.current) responseRef.current.textContent += newStr[0];
               newStr = newStr.slice(1)
               console.log('running...');
             }

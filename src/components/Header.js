@@ -28,8 +28,8 @@ export default function Header(props) {
                         <Navbar.Brand className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Navbar.Brand>
                     </Link>
                     <span className='' style={{display: "flex", flexDirection: "column", rowGap: "7px"}}>
-                        <Navbar.Toggle className="d-lg-none d-block'" bsPrefix="collaps" aria-controls={`offcanvasNavbar-expand-lg`} />
                         <span className="line d-lg-none d-block"></span>
+                        <Navbar.Toggle className="d-lg-none d-block'" bsPrefix="collaps" aria-controls={`offcanvasNavbar-expand-lg`} />
                         <span className="line d-lg-none d-block"></span>
                     </span>
                     <Navbar.Offcanvas
