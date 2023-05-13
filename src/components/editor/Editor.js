@@ -2,7 +2,7 @@
 // import Main from "./Main"
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import { Stack } from 'react-bootstrap';
 import {basicSetup} from "codemirror"
 import {EditorView, keymap} from "@codemirror/view"
@@ -18,12 +18,15 @@ function Editor() {
   const responseRef = useRef(null);
   const spinnerRef = useRef(null);
   const [show, setShow] = useState(false);
+  const [showBtns, setShowBtns] = useState(true)
   const [state, setState] = useState({
     color: "white",
     large: window.innerWidth >= 992 ? true : false,
     scroll: false,
     show: false
   })
+  console.log('state updated');
+  console.log(showBtns);
 
   let int;
 
@@ -171,6 +174,14 @@ function Editor() {
             }
           }, 10);
         }, 3000)
+      }
+
+      function revert() {
+        setSplit(false)
+      }
+
+      function controlBtns() {
+        setShowBtns(!showBtns)
       }
 
       useEffect(() => {
@@ -329,7 +340,25 @@ function Editor() {
               state.large ?
                 <div className='d-flex h-100 w-100'>
                   <div ref={editorRef} className='h-100' style={{position: 'relative', width: !split ? "100%" : "50%", transition: "all 2s"}}>
-                    <i onClick={call} style={{position: "absolute", bottom: "10px", right: "10px", zIndex: "3", cursor: "pointer"}} id="enter" className="fs-3 text-white fa-solid fa-arrow-right"></i>
+                    {/* <i onClick={call} style={{position: "absolute", transform: "translateX(-50%)", bottom: "15px", right: "50%", zIndex: "3", cursor: "pointer"}} id="enter" className="fs-3 text-white fa-solid fa-arrow-right"></i> */}
+                    <Row className="p-2 gap-2 flex-nowrap" style={{borderRadius: "25px", background: "rgb(51,51,52)", position: "absolute", transform: "translateX(-50%)", bottom: "15px", left: "50%", zIndex: "8", cursor: "pointer"}}>
+                      {
+                        split && 
+                        <>
+                          <Col style={{display: showBtns ? "flex" : "none"}} onClick={revert} className="align-items-center justify-content-center pt-2 pb-2 px-4 control-buttons">
+                            <i className=" fa-solid fa-arrow-left"></i>
+                          </Col>
+                          <Col style={{display: showBtns ? "flex" : "none"}}  onClick={call} className="align-items-center justify-content-center pt-2 pb-2 px-4 control-buttons">
+                            <i className=" fa-solid fa-rotate-left"></i>
+                          </Col>
+                        </>
+                        
+                      }
+                      <Col style={{display: showBtns ? "flex" : "none"}}  onClick={call} className="align-items-center justify-content-center pt-2 pb-2 px-4 control-buttons">
+                        <i className=" fa-solid fa-paper-plane"></i>
+                      </Col>
+                      <Col onClick={controlBtns} className="hide d-flex align-items-center justify-content-center">{showBtns ? "Hide" : "Show"}</Col>
+                    </Row>
                   </div>
                   <div className='' style={{ width: !split ? "0%" : "50%", transition: "all 2s", maxWidth: "50%"}}>
                     <pre ref={responseRef} className='pre-wrap'></pre>
@@ -340,7 +369,25 @@ function Editor() {
 
                 <div style={{overflow: "hidden"}} className='d-flex flex-column h-100 w-100'>
                   <div ref={editorRef} className='' style={{position: 'relative', height: !split ? "100%" : "45%", transition: "all 2s"}}>
-                    <i onClick={call} style={{position: "absolute", bottom: "10px", right: "10px", zIndex: "3", cursor: "pointer"}} id="enter" className="fs-3 text-white fa-solid fa-arrow-right"></i>
+                    {/* <i onClick={call} style={{position: "absolute", transform: "translateX(-50%)", bottom: "15px", right: "50%", zIndex: "3", cursor: "pointer"}} className="fs-3 text-white fa-solid fa-arrow-right"></i> */}
+                    <Row className="p-2 gap-2 flex-nowrap" style={{borderRadius: "25px", background: "rgb(51,51,52)", position: "absolute", transform: "translateX(-50%)", bottom: "15px", left: "50%", zIndex: "8", cursor: "pointer"}}>
+                      {
+                        split && 
+                        <>
+                          <Col style={{display: showBtns ? "flex" : "none"}}  onClick={revert} className="align-items-center justify-content-center pt-2 pb-2 px-4 control-buttons">
+                            <i className=" fa-solid fa-arrow-left"></i>
+                          </Col>
+                          <Col style={{display: showBtns ? "flex" : "none"}}  onClick={call} className="align-items-center justify-content-center pt-2 pb-2 px-4 control-buttons">
+                            <i className=" fa-solid fa-rotate-left"></i>
+                          </Col>
+                        </>
+                        
+                      }
+                      <Col style={{display: showBtns ? "flex" : "none"}}  onClick={call} className="align-items-center justify-content-center pt-2 pb-2 px-4 control-buttons">
+                        <i className=" fa-solid fa-paper-plane"></i>
+                      </Col>
+                      <Col onClick={controlBtns} className="hide d-flex align-items-center justify-content-center">Hide</Col>
+                    </Row>
                   </div>
                   <div className='' style={{ height: !split ? "0%" : "55%", transition: "all 2s", maxHeight: "55%"}}>
                     <pre ref={responseRef} className='pre-wrap'></pre>
