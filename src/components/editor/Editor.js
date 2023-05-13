@@ -386,7 +386,7 @@ function Editor() {
                       <Col style={{display: showBtns ? "flex" : "none"}}  onClick={call} className="align-items-center justify-content-center pt-2 pb-2 px-4 control-buttons">
                         <i className=" fa-solid fa-paper-plane"></i>
                       </Col>
-                      <Col onClick={controlBtns} className="hide d-flex align-items-center justify-content-center">Hide</Col>
+                      <Col onClick={controlBtns} className="hide d-flex align-items-center justify-content-center">{showBtns ? "Hide" : "Show"}</Col>
                     </Row>
                   </div>
                   <div className='' style={{ height: !split ? "0%" : "55%", transition: "all 2s", maxHeight: "55%"}}>
