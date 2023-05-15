@@ -295,3 +295,7 @@ pre {
 .hide:hover {
     color: rgb(255, 255, 255);
 }
+
+#google-icon {
+    height: 1.7rem;
+}

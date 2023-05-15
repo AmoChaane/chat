@@ -1,5 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
@@ -47,9 +48,13 @@ export default function Header(props) {
                             {/* <Link to="/editor">Profile</Link> */}
                             <Nav.Link href="#action2" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link me-4 text-white'>Github</Nav.Link>
                             <Nav.Link href="#action2" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className='fs-5 link text-white'>Suggestion</Nav.Link>
-                            {!props.state.large && <Nav.Link href="#signin" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className="fs-5 link text-white">Sign In</Nav.Link>}
+                            {!props.state.large && <Nav.Link href="#signin" style={{borderBottom: !props.state.large ? "1px solid white" : ""}} className="fs-5 link text-white">Log In</Nav.Link>}
                         </Nav>
-                        {props.state.large && <Nav.Link href="#signin" id="signin" className="fs-4 text-white">Sign In</Nav.Link>}
+                        {/* {props.state.large && <Nav.Link href="#signin" id="signin" className="fs-4 text-white">Log In</Nav.Link>} */}
+                        <div className="" style={{display: "grid", gridTemplateColumns: "1fr 1fr", columnGap: "8px", alignItems: "center"}}>
+                            <Link to="/sign"><Button className="px-3 w-100" style={{borderRadius: "26px"}} variant="outline-light btn">Log In</Button></Link>
+                            <Link to="/sign"><Button className="px-3 w-100" style={{borderRadius: "26px"}} variant="light">Sign Up</Button></Link>
+                        </div>
                     </Offcanvas.Body>
                     </Navbar.Offcanvas>
                 </Container>
