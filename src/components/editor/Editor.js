@@ -245,18 +245,8 @@ function Editor() {
                             <i className="fa-solid fa-message"></i>
                             <span className='fs-6'>Game Design vs Game Development</span>
                         </div>  
-                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
-                            <i className="fa-solid fa-message"></i>
-                            <span className='fs-6'>Game Design vs Game Development</span>
-                        </div>  
-                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
-                            <i className="fa-solid fa-message"></i>
-                            <span className='fs-6'>Game Design vs Game Development</span>
-                        </div>  
-                        <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
-                            <i className="fa-solid fa-message"></i>
-                            <span className='fs-6'>Game Design vs Game Development</span>
-                        </div>  
+
+                         
                     </Stack>  
                 </div>
                 <div>
@@ -281,7 +271,7 @@ function Editor() {
             <Col id='sidebar' lg={3} className='d-lg-flex d-none flex-column justify-content-between h-100 p-4'>
                 <Link to="/" style={{textAlign: "center", textDecoration: "none"}} className='fs-1 text-white'><span id='logoFirst'>Code</span><span id='logoSecond' className='fw-light'>Pilot</span></Link>
                 <h3 className='text-white fw-5 fs-5 mt-4'>History</h3>
-                <div className="text-white" style={{overflowY: "auto"}}>
+                <div className="text-white" style={{overflowY: "auto", height: state.large ? "100%" : ""}}>
                     <Stack gap={3} className='pe-2'>
                       <div className='history-item d-flex align-items-center' style={{columnGap: "20px"}}>
                             <i className="fa-solid fa-message"></i>
@@ -338,8 +328,8 @@ function Editor() {
             <Col>
             {
               state.large ?
-                <div className='d-flex h-100 w-100'>
-                  <div ref={editorRef} className='h-100' style={{position: 'relative', width: !split ? "100%" : "50%", transition: "all 2s"}}>
+                <div className='d-flex h-100 w-100' style={{position: 'relative'}}>
+                  <div ref={editorRef} className='h-100' style={{width: !split ? "100%" : "50%", transition: "all 2s"}}>
                     {/* <i onClick={call} style={{position: "absolute", transform: "translateX(-50%)", bottom: "15px", right: "50%", zIndex: "3", cursor: "pointer"}} id="enter" className="fs-3 text-white fa-solid fa-arrow-right"></i> */}
                     <Row className="p-2 gap-2 flex-nowrap" style={{borderRadius: "25px", background: "rgb(51,51,52)", position: "absolute", transform: "translateX(-50%)", bottom: "15px", left: "50%", zIndex: "8", cursor: "pointer"}}>
                       {
@@ -367,8 +357,8 @@ function Editor() {
             
                   :
 
-                <div style={{overflow: "hidden"}} className='d-flex flex-column h-100 w-100'>
-                  <div ref={editorRef} className='' style={{position: 'relative', height: !split ? "100%" : "45%", transition: "all 2s"}}>
+                <div style={{overflow: "hidden", position: 'relative'}} className='d-flex flex-column h-100 w-100'>
+                  <div ref={editorRef} className='' style={{height: !split ? "100%" : "45%", transition: "all 2s"}}>
                     {/* <i onClick={call} style={{position: "absolute", transform: "translateX(-50%)", bottom: "15px", right: "50%", zIndex: "3", cursor: "pointer"}} className="fs-3 text-white fa-solid fa-arrow-right"></i> */}
                     <Row className="p-2 gap-2 flex-nowrap" style={{borderRadius: "25px", background: "rgb(51,51,52)", position: "absolute", transform: "translateX(-50%)", bottom: "15px", left: "50%", zIndex: "8", cursor: "pointer"}}>
                       {
