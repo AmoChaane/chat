@@ -14,7 +14,6 @@ import pic3 from "../images/carousel/pexels-lisa-fotios-16129724.jpg"
 import pic4 from "../images/carousel/pexels-mikhail-fesenko-9553909.jpg"
 
 export default function Header(props) {
-    console.log('header');
     const afterScroll = {
         backgroundColor: "black",
         // opacity: '1',
@@ -48,7 +47,7 @@ export default function Header(props) {
     return (
         <div id='header'>
             <Carousel fade>
-            <Carousel.Item interval={500}>
+            <Carousel.Item interval={1000}>
                 <img
                 className="d-block w-100 slide"
                 src={pic}

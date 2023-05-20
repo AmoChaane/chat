@@ -6,7 +6,6 @@ import Sign from "./components/Sign"
 
 
 const RouteSwitch = () => {
-  console.log('routeSwitch');
   return (
     <HashRouter>
       <Routes> 

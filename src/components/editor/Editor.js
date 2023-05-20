@@ -25,8 +25,6 @@ function Editor() {
     scroll: false,
     show: false
   })
-  console.log('state updated');
-  console.log(showBtns);
 
   let int;
 
@@ -170,7 +168,6 @@ function Editor() {
             if(newStr && responseRef.current) {
               if(responseRef.current) responseRef.current.textContent += newStr[0];
               newStr = newStr.slice(1)
-              console.log('running...');
             }
           }, 10);
         }, 3000)

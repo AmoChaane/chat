@@ -11,7 +11,6 @@ function App() {
     scroll: false,
     show: false
   })
-  console.log('ran');
 
   document.querySelector("#root").style.display = 'block';
 
