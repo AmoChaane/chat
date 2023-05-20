@@ -18,10 +18,14 @@ a {
 #header {
     position: relative;
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/pexels-lisa-fotios-16129703.jpg');
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/pexels-lisa-fotios-16129703.jpg');
     background-position-y: 15%;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
+}
+
+.slide {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
 }
 
 #try {

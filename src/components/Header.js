@@ -6,6 +6,12 @@ import Nav from 'react-bootstrap/Nav';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import { Link } from "react-router-dom";
+import Carousel from 'react-bootstrap/Carousel';
+import pic from "../images/pexels-lisa-fotios-16129703.jpg"
+import pic1 from "../images/carousel/pexels-christina-morillo-1181676.jpg"
+import pic2 from "../images/carousel/pexels-czapp-árpád-7498603.jpg"
+import pic3 from "../images/carousel/pexels-lisa-fotios-16129724.jpg"
+import pic4 from "../images/carousel/pexels-mikhail-fesenko-9553909.jpg"
 
 export default function Header(props) {
     console.log('header');
@@ -21,8 +27,98 @@ export default function Header(props) {
         transition: "all .5s"
     }
 
+    function styles(image) {
+        return {
+            height: "100vh",
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${image})`,
+            backgroundPositionY: "15%",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover" 
+        }
+    }
+
+    // const slideImg = {
+    //     height: "100vh",
+    //     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${pic})`,
+    //     backgroundPositionY: "15%",
+    //     backgroundRepeat: "no-repeat",
+    //     backgroundSize: "cover"
+    // }
+
     return (
         <div id='header'>
+            <Carousel fade>
+            <Carousel.Item className="" style={styles(pic)}>
+                {/* <img
+                className="d-block w-100 slide"
+                src={pic}
+                alt="First slide"
+                style={{height: "100vh"}}
+                /> */}
+                <div className='title'>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    {/* <div id="try"> */}
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    {/* </div> */}
+                </div>
+            </Carousel.Item>
+            <Carousel.Item style={styles(pic1)}>
+                {/* <img
+                className="d-block w-100 slide"
+                src={pic1}
+                alt="Second slide"
+                style={{height: "100vh"}}
+                /> */}
+                <div className='title'>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    {/* <div id="try"> */}
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    {/* </div> */}
+                </div>
+            </Carousel.Item>
+            <Carousel.Item style={styles(pic2)}>
+                {/* <img
+                className="d-block w-100 slide"
+                src={pic2}
+                alt="Third slide"
+                style={{height: "100vh"}}
+                /> */}
+                <div className='title'>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    {/* <div id="try"> */}
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    {/* </div> */}
+                </div>
+            </Carousel.Item>
+            <Carousel.Item style={styles(pic3)}>
+                {/* <img
+                className="d-block w-100 slide"
+                src={pic3}
+                alt="Fourth slide"
+                style={{height: "100vh"}}
+                /> */}
+                <div className='title'>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    {/* <div id="try"> */}
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    {/* </div> */}
+                </div>
+            </Carousel.Item>
+            <Carousel.Item style={styles(pic4)}>
+                {/* <img
+                className="d-block w-100 slide"
+                src={pic4}
+                alt="Fifth slide"
+                style={{height: "100vh"}}
+                /> */}
+                <div className='title'>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    {/* <div id="try"> */}
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    {/* </div> */}
+                </div>
+            </Carousel.Item>
+            </Carousel>
             <Navbar fixed="top" expand="lg" className="navbar pt-0" style={props.state.scroll ? afterScroll : initialStyle}>
                 <Container>
                     <Link to="/" style={{textDecoration: "none"}}>
@@ -59,13 +155,12 @@ export default function Header(props) {
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
-            <Col className='title row-gap-3'>
+            {/* <Col className='title row-gap-3'>
                 <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
                 <div id="try">
-                    {/* <Button variant="outline-light btn-lg btn"><Link id="tryItOnline" to="/editor">Try it Online</Link></Button> */}
                     <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
                 </div>
-            </Col>
+            </Col> */}
         </div>
     )
 }
