@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
 import Col from 'react-bootstrap/Col';
-import pic from "../images/pexels-scott-webb-2346594.jpg"
+import pic from "../images/pexels-an-nguyen-4001959.jpg"
 import pic2 from "../images/pexels-lucky-5374862.jpg"
 
 export default function Body(props){
