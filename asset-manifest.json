@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/code-pilot/static/css/main.a90c763f.css",
-    "main.js": "/code-pilot/static/js/main.e10c5ec8.js",
-    "static/media/pexels-an-nguyen-4001959.jpg": "/code-pilot/static/media/pexels-an-nguyen-4001959.2c24cec5b7ee0d73d462.jpg",
+    "main.js": "/code-pilot/static/js/main.afbcbb48.js",
     "static/media/pexels-cottonbro-studio-6804604.jpg": "/code-pilot/static/media/pexels-cottonbro-studio-6804604.4ce37ae52bb2885db5ce.jpg",
     "static/media/pexels-christina-morillo-1181676.jpg": "/code-pilot/static/media/pexels-christina-morillo-1181676.f2d58964313375678af0.jpg",
     "static/media/pexels-lisa-fotios-16129724.jpg": "/code-pilot/static/media/pexels-lisa-fotios-16129724.84cac8f70acd9912e8e9.jpg",
     "static/media/pexels-mikhail-fesenko-9553909.jpg": "/code-pilot/static/media/pexels-mikhail-fesenko-9553909.41892b5628869d9a4180.jpg",
+    "static/media/pexels-an-nguyen-4001959.jpg": "/code-pilot/static/media/pexels-an-nguyen-4001959.7979837b87c692123d59.jpg",
     "static/media/pexels-lisa-fotios-16129703.jpg": "/code-pilot/static/media/pexels-lisa-fotios-16129703.77c850652ab25ec5a77d.jpg",
     "static/media/pexels-lucky-5374862.jpg": "/code-pilot/static/media/pexels-lucky-5374862.cd6d7edf2cadca9f915c.jpg",
     "static/media/undraw_pair_programming_re_or4x.svg": "/code-pilot/static/media/undraw_pair_programming_re_or4x.7a3d7dd3452cd5b20c89976fed8ca153.svg",
     "static/media/7123025_logo_google_g_icon.png": "/code-pilot/static/media/7123025_logo_google_g_icon.960c670a7a8d952eba35.png",
     "index.html": "/code-pilot/index.html",
     "main.a90c763f.css.map": "/code-pilot/static/css/main.a90c763f.css.map",
-    "main.e10c5ec8.js.map": "/code-pilot/static/js/main.e10c5ec8.js.map"
+    "main.afbcbb48.js.map": "/code-pilot/static/js/main.afbcbb48.js.map"
   },
   "entrypoints": [
     "static/css/main.a90c763f.css",
-    "static/js/main.e10c5ec8.js"
+    "static/js/main.afbcbb48.js"
   ]
 }
