@@ -46,83 +46,6 @@ export default function Header(props) {
 
     return (
         <div id='header'>
-            <Carousel fade pause={false}>
-            <Carousel.Item interval={1000}>
-                <img
-                className="d-block w-100 slide"
-                src={pic}
-                alt="First slide"
-                style={{height: "100vh", objectFit: "cover", objectPosition: "50% 15%"}}
-                />
-                <div className='title row-gap-3' style={{zIndex: "8"}}>
-                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
-                    <div id="try">
-                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
-                    </div>
-                </div>
-                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)", }}></div>
-            </Carousel.Item>
-            <Carousel.Item interval={1500}>
-                <img
-                className="d-block w-100 slide"
-                src={pic1}
-                alt="Second slide"
-                style={{height: "100vh", objectFit: "cover", objectPosition: "50% 15%"}}
-                />
-                <div className='title row-gap-3' style={{zIndex: "8"}}>
-                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
-                    <div id="try">
-                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
-                    </div>
-                </div>
-                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)", }}></div>
-            </Carousel.Item>
-            <Carousel.Item interval={1500}>
-                <img
-                className="d-block w-100 slide"
-                src={pic2}
-                alt="Third slide"
-                style={{height: "100vh", objectFit: "cover", objectPosition: "50% 15%"}}
-                />
-                <div className='title row-gap-3' style={{zIndex: "8"}}>
-                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
-                    <div id="try">
-                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
-                    </div>
-                </div>
-                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)", }}></div>
-            </Carousel.Item>
-            <Carousel.Item interval={1500}>
-                <img
-                className="d-block w-100 slide"
-                src={pic3}
-                alt="Fourth slide"
-                style={{height: "100vh", objectFit: "cover", objectPosition: "50% 15%"}}
-                />
-                <div className='title row-gap-3' style={{zIndex: "8"}}>
-                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
-                    <div id="try">
-                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
-                    </div>
-                </div>
-                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)", }}></div>
-            </Carousel.Item>
-            <Carousel.Item interval={1500}>
-                <img
-                className="d-block w-100 slide"
-                src={pic4}
-                alt="Fifth slide"
-                style={{height: "100vh", objectFit: "cover", objectPosition: "50% 15%"}}
-                />
-                <div className='title row-gap-3' style={{zIndex: "8"}}>
-                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
-                    <div id="try">
-                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
-                    </div>
-                </div>
-                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", }}></div>
-            </Carousel.Item>
-            </Carousel>
             <Navbar fixed="top" expand="lg" className="navbar pt-0" style={props.state.scroll ? afterScroll : initialStyle}>
                 <Container>
                     <Link to="/" style={{textDecoration: "none"}}>
@@ -159,12 +82,90 @@ export default function Header(props) {
                     </Navbar.Offcanvas>
                 </Container>
             </Navbar>
-            {/* <Col className='title row-gap-3'>
+            <Carousel interval={1500} fade pause={false} className="h-100">
+            <Carousel.Item className='h-100'>
+                <img
+                className="d-block w-100 slide h-100"
+                src={pic}
+                alt="First slide"
+                style={{objectFit: "cover", objectPosition: "50% 15%"}}
+                />
+                {/* <div className='title row-gap-3' style={{zIndex: "8"}}>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    <div id="try">
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    </div>
+                </div> */}
+                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)", }}></div>
+            </Carousel.Item>
+            <Carousel.Item className='h-100'>
+                <img
+                className="d-block w-100 slide h-100"
+                src={pic1}
+                alt="Second slide"
+                style={{objectFit: "cover", objectPosition: "50% 15%"}}
+                />
+                {/* <div className='title row-gap-3' style={{zIndex: "8"}}>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    <div id="try">
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    </div>
+                </div> */}
+                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)", }}></div>
+            </Carousel.Item>
+            <Carousel.Item className='h-100'>
+                <img
+                className="d-block w-100 slide h-100"
+                src={pic2}
+                alt="Third slide"
+                style={{objectFit: "cover", objectPosition: "50% 15%"}}
+                />
+                {/* <div className='title row-gap-3' style={{zIndex: "8"}}>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    <div id="try">
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    </div>
+                </div> */}
+                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)", }}></div>
+            </Carousel.Item>
+            <Carousel.Item className='h-100'>
+                <img
+                className="d-block w-100 slide h-100"
+                src={pic3}
+                alt="Fourth slide"
+                style={{objectFit: "cover", objectPosition: "50% 15%"}}
+                />
+                {/* <div className='title row-gap-3' style={{zIndex: "8"}}>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    <div id="try">
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    </div>
+                </div> */}
+                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.4)", }}></div>
+            </Carousel.Item>
+            <Carousel.Item className='h-100'>
+                <img
+                className="d-block w-100 slide h-100"
+                src={pic4}
+                alt="Fifth slide"
+                style={{objectFit: "cover", objectPosition: "50% 15%"}}
+                />
+                {/* <div className='title row-gap-3' style={{zIndex: "8"}}>
+                    <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
+                    <div id="try">
+                        <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
+                    </div>
+                </div> */}
+                <div style={{position: "absolute", top: "0", left: "0", width: "100%", height: "100%", backgroundColor: "rgba(0, 0, 0, 0.6)", }}></div>
+            </Carousel.Item>
+            </Carousel>
+            
+            <div className='title row-gap-3' style={{zIndex: "8"}}>
                 <h1 className='display-3 display-md-1 fw-normal'>Introducing CodePilot, a developer’s co-pilot</h1>
                 <div id="try">
                     <Link to="/editor"><Button variant="outline-light btn-lg btn">Try it Online</Button></Link>
                 </div>
-            </Col> */}
+            </div>
         </div>
     )
 }

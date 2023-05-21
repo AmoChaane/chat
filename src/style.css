@@ -7,6 +7,10 @@ a {
     text-align: center;
 }
 
+.carousel-inner {
+    height: 100%;
+}
+
 #root {
     /* border: 1px solid red; */
     overflow-x: hidden;
@@ -173,7 +177,7 @@ pre {
     row-gap: 1em;
     color: white;
     position: absolute;
-    top: 50%;
+    top: 53%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* text-align: center; */
