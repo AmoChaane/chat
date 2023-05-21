@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/code-pilot/static/css/main.5f3e6b40.css",
-    "main.js": "/code-pilot/static/js/main.afbcbb48.js",
+    "main.css": "/code-pilot/static/css/main.80142acb.css",
+    "main.js": "/code-pilot/static/js/main.85bd2d70.js",
     "static/media/pexels-cottonbro-studio-6804604.jpg": "/code-pilot/static/media/pexels-cottonbro-studio-6804604.4ce37ae52bb2885db5ce.jpg",
     "static/media/pexels-christina-morillo-1181676.jpg": "/code-pilot/static/media/pexels-christina-morillo-1181676.f2d58964313375678af0.jpg",
     "static/media/pexels-lisa-fotios-16129724.jpg": "/code-pilot/static/media/pexels-lisa-fotios-16129724.84cac8f70acd9912e8e9.jpg",
@@ -12,11 +12,11 @@
     "static/media/undraw_pair_programming_re_or4x.svg": "/code-pilot/static/media/undraw_pair_programming_re_or4x.7a3d7dd3452cd5b20c89976fed8ca153.svg",
     "static/media/7123025_logo_google_g_icon.png": "/code-pilot/static/media/7123025_logo_google_g_icon.960c670a7a8d952eba35.png",
     "index.html": "/code-pilot/index.html",
-    "main.5f3e6b40.css.map": "/code-pilot/static/css/main.5f3e6b40.css.map",
-    "main.afbcbb48.js.map": "/code-pilot/static/js/main.afbcbb48.js.map"
+    "main.80142acb.css.map": "/code-pilot/static/css/main.80142acb.css.map",
+    "main.85bd2d70.js.map": "/code-pilot/static/js/main.85bd2d70.js.map"
   },
   "entrypoints": [
-    "static/css/main.5f3e6b40.css",
-    "static/js/main.afbcbb48.js"
+    "static/css/main.80142acb.css",
+    "static/js/main.85bd2d70.js"
   ]
 }
