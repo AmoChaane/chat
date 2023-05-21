@@ -46,7 +46,7 @@ export default function Header(props) {
 
     return (
         <div id='header'>
-            <Carousel fade>
+            <Carousel fade pause={false}>
             <Carousel.Item interval={1000}>
                 <img
                 className="d-block w-100 slide"
