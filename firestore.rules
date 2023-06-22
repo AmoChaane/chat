@@ -1,0 +1,23 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // User Profiles:
+    //   - Allow users to create their own profile document.
+    //   - Only allow authenticated users to read or update their own profile document.
+    //   - No other operations are allowed.
+    match /users/{userId} {
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow read, update: if request.auth != null && request.auth.uid == userId;
+      allow delete: if false;
+    }
+
+    // Other Collections:
+    //   - Allow authenticated users to read and write data in other collections.
+    //   - Deny all operations for unauthenticated users.
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

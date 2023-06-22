@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, HashRouter} from "react-router-dom";
+import { Routes, Route, HashRouter} from "react-router-dom";
 import App from "./App";
 import Editor from "./components/editor/Editor"
-import Sign from "./components/Sign"
+import SignUp from "./components/SignUp"
+import LogIn from "./components/LogIn"
 
 
 const RouteSwitch = () => {
@@ -11,7 +12,8 @@ const RouteSwitch = () => {
       <Routes> 
         <Route path="/" element={<App />} /> {/* This link is the homepage bcos it's the first one */}
         <Route path="/editor" element={<Editor />} />
-        <Route path="/sign" element={<Sign />} />
+        <Route path="/signUp" element={<SignUp />} />
+        <Route path="/logIn" element={<LogIn />} />
       </Routes>
     </HashRouter>
   );

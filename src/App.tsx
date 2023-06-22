@@ -1,3 +1,4 @@
+// import Header from "./components/Header"
 import Header from "./components/Header"
 import Body from "./components/Body"
 import Footer from "./components/Footer"
@@ -5,23 +6,27 @@ import React, { useState, useEffect} from "react"
 import "./style.css"
 
 function App() {
-  const [state, setState] = useState({
+  interface AppState {
+    color: string,
+    large: boolean,
+    scroll: boolean,
+    show: boolean
+  }
+  const [state, setState] = useState<AppState>({
     color: "white",
     large: window.innerWidth >= 992 ? true : false,
     scroll: false,
     show: false
   })
+  
 
-  document.querySelector("#root").style.display = 'block';
+  useEffect(() => {
+    const rootElement = document.querySelector("#root") as HTMLDivElement;
+    if (rootElement) {
+      rootElement.style.display = 'block';
+    }
+  }, []);
 
-  function show() {
-    setState(prev => {
-      return {
-        ...prev,
-        show: !prev.show
-      }
-    })
-  }
 
   function scrollUp() {
     document.documentElement.scrollTo({
@@ -50,10 +55,11 @@ function App() {
 
 
   useEffect(() => { // in case window is resized
-    const handleResize = () => {
+    const handleResize = ():void => {
       if(window.innerWidth >= 992) {
         setState(prev => {
           return {
+            ...prev,
             color: "white",
             large: true
           }
@@ -61,6 +67,7 @@ function App() {
       } else {
         setState(prev => {
           return {
+            ...prev,
             color: "black",
             large: false
           }
@@ -73,9 +80,9 @@ function App() {
 
   return (
     <>
-      <Header state={state} show={show}/>
+      <Header state={state}/>
       <Body state={state}/>
-      <Footer state={state} scrollUp={scrollUp}/>
+      <Footer scrollUp={scrollUp}/>
     </>
   )
 }

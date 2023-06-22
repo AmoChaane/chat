@@ -70,7 +70,7 @@ a {
 }
 
 .history-item {
-    padding: 5px 0 5px 5px;
+    padding: 5px 5px 5px 5px;
     border-radius: 7px;
     transition: all .05s;
     white-space: nowrap;
@@ -83,6 +83,73 @@ a {
     cursor: pointer;
 }
 
+.history-item p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.actual-history-item:hover .delete-item {
+    opacity: 1;
+    visibility: visible;
+}
+
+.delete-item {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+}
+
+.history-text:hover + .delete-item {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.delete-item:hover {
+    animation: shake .8s infinite;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-5px) rotate(-5deg); }
+    20% { transform: translateX(5px) rotate(5deg); }
+    30% { transform: translateX(-5px) rotate(-5deg); }
+    40% { transform: translateX(5px) rotate(5deg); }
+    50% { transform: translateX(-5px) rotate(-5deg); }
+    60% { transform: translateX(5px) rotate(5deg); }
+    70% { transform: translateX(-5px) rotate(-5deg); }
+    80% { transform: translateX(5px) rotate(5deg); }
+    90% { transform: translateX(-5px) rotate(-5deg); }
+    100% { transform: translateX(0); }
+  }
+
+.sidebar-settings .history-item i {
+    width: 18px;
+}
+
+.history-item2 {
+    padding: 5px 0 5px 5px;
+    border-radius: 7px;
+    transition: all .05s;
+    white-space: nowrap;
+    overflow-x: visible;
+    text-overflow: ellipsis;
+}
+
+.history-item2:hover{
+    background-color: #232223;
+    cursor: pointer;
+}
+
+.logOut {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.logOut.show {
+  opacity: 1;
+}
 
 
 
@@ -292,9 +359,17 @@ pre {
     background: #232223;
 }
 
-.cm-editor{
+.cm-editor, .cm-theme {
     height: 100%;
+}
+
+.cm-scroller{
+    /* height: 100vh; */
     background: #232223;
+}
+
+#code-editor .cm-gutterElement {
+    text-align: center;
 }
 
 .control-buttons {
@@ -305,11 +380,12 @@ pre {
 
 .control-buttons:hover {
     background-color: #232223;
-}
-
-.control-buttons:hover i {
     color: white;
 }
+
+/* .control-buttons:hover i {
+    color: white;
+} */
 
 
 .hide {
@@ -324,4 +400,29 @@ pre {
 
 #google-icon {
     height: 1.7rem;
+}
+
+#modal .modal-content {
+    padding: 0 15px 0 15px;
+}
+
+#modal .modal-header, #modal .modal-footer {
+    border-color: transparent;
+}
+
+#modal .modal-footer {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+.input-item {
+    outline: none;
+    width: 100%;
+    border-radius: 7px;
+    border: none;
+    /* padding: 3px; */
+    height: 30px;
+    background-color: #232223;
+    color: white;
 }

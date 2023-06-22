@@ -1,12 +1,21 @@
 import React from "react"
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Stack from 'react-bootstrap/Stack';
 import Col from 'react-bootstrap/Col';
 import pic from "../images/pexels-an-nguyen-4001959.jpg"
 import pic2 from "../images/pexels-lucky-5374862.jpg"
 
-export default function Body(props){
+interface HeaderProps {
+    state: {
+        color: string,
+        large: boolean,
+        scroll: boolean,
+        show: boolean
+    }  
+}
+
+export default function Body({state}: HeaderProps){
+    
     return (
         <div className="body bg-black">
             <Container>
@@ -20,7 +29,7 @@ export default function Body(props){
                 <div style={{height: "2px", background: "white", margin: "80px 0 80px 0"}}></div>
                 <Row className="flex-lg-row flex-column g-5">
                     {
-                        props.state.large ? 
+                        state.large ? 
                         <>
                             <Col>
                                 <img src={pic} alt="picture1" style={{width: "100%", height: "500px"}}/>
@@ -87,7 +96,7 @@ export default function Body(props){
 
                 <Row style={{paddingBottom: "100px"}} className="flex-lg-row flex-column">
                     {
-                        props.state.large ? 
+                        state.large ? 
                         <>
                             <Col>
                             <h1 className='display-5 fw-normal mt-5 text-white' style={{textAlign: "center"}}>Why CodePilot?</h1>
